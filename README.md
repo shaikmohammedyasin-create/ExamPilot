@@ -5,7 +5,7 @@
 ---
 
 ### 🔗 Links & Media
-- **Live Demo:** [Insert Live Link Here](https://your-live-demo-url.com)
+- **Live Demo:** [https://shaikmohammedyasin-create.github.io/ExamPilot/](https://shaikmohammedyasin-create.github.io/ExamPilot/)
 - **Voice Workflow Demo:**
   
   ![Wispr Flow Usage Screenshot](placeholder-wispr-flow-screenshot.png)
