@@ -7,8 +7,10 @@
 ### 🔗 Links & Media
 - **Live Demo:** [https://shaikmohammedyasin-create.github.io/ExamPilot/](https://shaikmohammedyasin-create.github.io/ExamPilot/)
 - **Voice Workflow Demo:**
+  - **Short Demo Video:** [TODO](TODO)
+  - **Full Recording:** [TODO](TODO)
   
-  ![Wispr Flow Usage Screenshot](placeholder-wispr-flow-screenshot.png)
+  ![Wispr Flow Usage Screenshot](whisper-flow-usage.png)
   *(Wispr Flow dictation in action)*
 
 ---
@@ -46,7 +48,7 @@ ExamPilot requires no installation, compilers, or background services:
 
 1. Clone or download this repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/ExamPilot.git
+   git clone https://github.com/shaikmohammedyasin-create/ExamPilot.git
    ```
 2. Navigate into the project folder:
    ```bash
@@ -67,7 +69,7 @@ ExamPilot requires no installation, compilers, or background services:
 
 ExamPilot was built entirely without typing on a keyboard. Every single line of code—from the HTML structure, CSS design tokens, and JavaScript algorithms, to data extraction, bug fixes, and this documentation—was created using **Wispr Flow** voice dictation.
 
-By combining voice dictation with iterative prompt-driven engineering, ExamPilot demonstrates that comprehensive, production-ready web applications can be conceived, coded, and refined purely through speech.
+By combining voice dictation with iterative prompt-driven engineering, ExamPilot demonstrates that comprehensive web applications can be conceived, coded, and refined purely through speech.
 
 ---
 
