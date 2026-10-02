@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExamPilot</title>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Application Header -->
+  <header class="app-header">
+    <h1 class="app-title">ExamPilot</h1>
+    <p class="app-tagline">Your exam plan built from your own question bank.</p>
+    <p class="app-subline">Made for KHIT students.</p>
+  </header>
+
+  <!-- Main Application Content -->
+  <main class="container">
+    <!-- Overall Progress Bar Section -->
+    <section class="card progress-card" id="overallProgressSection">
+      <div class="progress-header">
+        <h2 class="section-title">Overall Preparation Progress</h2>
+        <div class="progress-stats-right">
+          <span class="streak-badge" id="streakBadge">🔥 0 Day Streak</span>
+          <span class="progress-percent" id="overallProgressText">0%</span>
+        </div>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="overallProgressBar" style="width: 0%;"></div>
+      </div>
+      <p class="progress-subtext" id="overallProgressSubtext">0 of 0 questions completed</p>
+    </section>
+
+    <!-- Today's Tasks Section -->
+    <section class="card today-section" id="todaySection">
+      <div class="today-header">
+        <h2 class="section-title">Today's Focus</h2>
+        <span class="today-date-badge" id="todayDateBadge"></span>
+      </div>
+      <div id="todayTasksContainer" class="today-tasks-container">
+        <p class="empty-message">No tasks scheduled for today. Add subjects and click "Generate Plan" to see today's tasks.</p>
+      </div>
+    </section>
+
+    <!-- Form to add a subject -->
+    <section class="card form-card">
+      <h2 class="section-title">Add Subject Plan</h2>
+      <form id="subjectForm" novalidate>
+        <!-- Subject Selection -->
+        <div class="form-group">
+          <label for="subjectSelect">Select Subject</label>
+          <select id="subjectSelect">
+            <option value="" disabled selected>-- Choose a subject --</option>
+          </select>
+        </div>
+
+        <!-- Exam Date and Difficulty Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="examDate">Exam Date</label>
+            <input type="date" id="examDate">
+          </div>
+          <div class="form-group">
+            <label for="difficulty">Difficulty (1 to 5)</label>
+            <select id="difficulty">
+              <option value="1">1 (Very Easy)</option>
+              <option value="2">2 (Easy)</option>
+              <option value="3" selected>3 (Medium)</option>
+              <option value="4">4 (Hard)</option>
+              <option value="5">5 (Very Hard)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Unit Selection Checkboxes (All ticked by default) -->
+        <div class="form-group">
+          <label class="form-label">Units</label>
+          <div id="unitCheckboxes" class="unit-checkboxes">
+            <!-- Populated dynamically and checked by default -->
+          </div>
+        </div>
+
+        <!-- Friendly Red Error Message Container -->
+        <div id="formErrorMessage" class="form-error-banner" style="display: none;" role="alert"></div>
+
+        <!-- Add Subject Button -->
+        <button type="submit" id="addSubjectBtn" class="btn btn-primary">Add Subject</button>
+      </form>
+    </section>
+
+    <!-- Added Subjects Cards Section -->
+    <section class="subjects-section">
+      <h2 class="section-title">Your Subjects</h2>
+      <div id="subjectCardsList" class="cards-grid">
+        <!-- Subject cards will be rendered here -->
+      </div>
+    </section>
+
+    <!-- Generated Plan Section -->
+    <section class="plan-section">
+      <div class="plan-header-row">
+        <h2 class="section-title">Study Plan</h2>
+        <button id="generatePlanBtn" class="btn btn-success" type="button">Generate Plan</button>
+      </div>
+      <div id="planContainer" class="plan-container">
+        <p class="empty-message">Add one or more subjects above and click "Generate Plan" to schedule your tasks.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <!-- Main JavaScript logic -->
+  <script src="script.js"></script>
+</body>
+</html>

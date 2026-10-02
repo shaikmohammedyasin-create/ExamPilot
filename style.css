@@ -1,0 +1,911 @@
+/* =========================================================
+   ExamPilot - Modern Dark Theme Stylesheet
+   Single Accent Color: Electric Indigo (#6366f1)
+   Fully Responsive for Phones & Desktop
+   Smooth Hover & Transition Effects
+   ========================================================= */
+
+:root {
+  /* Theme Backgrounds */
+  --bg-primary: #0a0f1d;
+  --bg-secondary: #111827;
+  --bg-card: #1e293b;
+  --bg-card-hover: #243247;
+  --bg-subtle: #0f172a;
+  
+  /* Borders */
+  --border-subtle: #334155;
+  --border-hover: #475569;
+  
+  /* Typography */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  
+  /* Single Accent Color: Indigo */
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-subtle: rgba(99, 102, 241, 0.15);
+  --accent-glow: rgba(99, 102, 241, 0.28);
+  
+  /* State Colors */
+  --success: #10b981;
+  --success-subtle: rgba(16, 185, 129, 0.12);
+  --danger: #ef4444;
+  --danger-subtle: rgba(239, 68, 68, 0.12);
+  
+  /* Radii & Shadows */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 10px 24px -4px rgba(0, 0, 0, 0.5), 0 0 16px var(--accent-glow);
+}
+
+/* Global resets & box sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header section styling */
+.app-header {
+  text-align: center;
+  padding: 24px 12px 32px;
+}
+
+.app-title {
+  margin: 0 0 8px 0;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-tagline {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+}
+
+.app-subline {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Main layout container */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 0 48px;
+}
+
+/* Base Card Style with smooth hover */
+.card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+}
+
+/* Overall Progress Card */
+.progress-card {
+  margin-bottom: 24px;
+  background: linear-gradient(145deg, #1e293b 0%, #172235 100%);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.progress-header .section-title {
+  margin: 0;
+}
+
+.progress-stats-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.streak-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fb923c;
+  background-color: rgba(251, 146, 60, 0.12);
+  border: 1px solid rgba(251, 146, 60, 0.3);
+  padding: 4px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.streak-badge:hover {
+  transform: scale(1.04);
+}
+
+.progress-percent {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 10px;
+  background-color: var(--bg-subtle);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, #818cf8 100%);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.progress-subtext {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Today's Tasks Section */
+.today-section {
+  margin-bottom: 28px;
+  border-left: 4px solid var(--accent);
+}
+
+.today-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.today-header .section-title {
+  margin: 0;
+}
+
+.today-date-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #a5b4fc;
+  background-color: var(--accent-subtle);
+  border: 1px solid var(--accent);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.today-tasks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Form section */
+.form-card {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  margin: 0 0 18px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Form inputs layout */
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label,
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.85);
+  cursor: pointer;
+}
+
+input[type="date"]:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+
+/* Checkboxes row */
+.unit-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.unit-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-subtle);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.unit-checkbox-label:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  background-color: var(--bg-card-hover);
+  transform: translateY(-1px);
+}
+
+.unit-checkbox-label input {
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+/* Friendly Red Error Banner */
+.form-error-banner {
+  background-color: var(--danger-subtle);
+  border: 1px solid var(--danger);
+  border-left: 4px solid var(--danger);
+  color: #fca5a5;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Buttons with Smooth Hover Effects */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:active {
+  transform: translateY(0) !important;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #ffffff;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--accent-glow);
+}
+
+.btn-success {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.btn-success:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--accent-glow);
+}
+
+.btn-delete {
+  background-color: var(--danger-subtle);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-delete:hover {
+  background-color: rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  transform: translateY(-1px);
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* Subject Card with Smooth Hover */
+.subject-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subject-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.subject-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.subject-card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.subject-card-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.subject-card-details li strong {
+  color: var(--text-muted);
+}
+
+/* Subject Card Readiness */
+.subject-card-readiness {
+  margin: 6px 0 16px 0;
+  padding: 10px 12px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.readiness-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+}
+
+.readiness-title {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.readiness-value {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.readiness-track {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.readiness-fill {
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Urgent Subject Card: fewer than 3 days remain */
+.subject-card.subject-card-urgent {
+  border-color: var(--danger);
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+.subject-card.subject-card-urgent .subject-card-title {
+  color: #f87171;
+}
+
+.days-left-badge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-left: 6px;
+}
+
+.days-left-badge.urgent {
+  background-color: var(--danger-subtle);
+  color: #fca5a5;
+  border: 1px solid var(--danger);
+}
+
+.days-left-badge.normal {
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.empty-message {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: 8px 0;
+}
+
+/* Study Plan Section */
+.plan-section {
+  margin-top: 36px;
+}
+
+.plan-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.plan-header-row .section-title {
+  margin: 0;
+}
+
+/* Plan Date Group Cards */
+.plan-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.plan-date-group {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s ease;
+}
+
+.plan-date-group:hover {
+  border-color: var(--border-hover);
+}
+
+.plan-date-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.plan-date-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.plan-date-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-subtle);
+  padding: 2px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* Expandable Task items */
+.plan-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-task-item {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plan-task-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Completed task state: turns green with a strikethrough */
+.plan-task-item.task-completed {
+  border-color: var(--success);
+  background-color: var(--success-subtle);
+}
+
+.plan-task-item.task-completed .task-title {
+  color: #34d399;
+  text-decoration: line-through;
+}
+
+.plan-task-item.task-completed .task-summary {
+  background-color: transparent;
+}
+
+/* Summary header for collapsible task */
+.task-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  gap: 12px;
+}
+
+.task-summary::-webkit-details-marker {
+  display: none;
+}
+
+.task-summary-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.task-expand-arrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.plan-task-item[open] .task-expand-arrow {
+  transform: rotate(90deg);
+  color: var(--accent);
+}
+
+.task-progress-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  border: 1px solid var(--border-subtle);
+}
+
+.plan-task-item.task-completed .task-progress-badge {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border-color: var(--success);
+}
+
+/* Task type tags */
+.task-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.task-tag-study {
+  background-color: var(--accent-subtle);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.task-tag-revision {
+  background-color: rgba(251, 146, 60, 0.15);
+  color: #fdba74;
+  border: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+.task-title {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Expanded Task Content */
+.task-content {
+  padding: 14px 18px 18px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+}
+
+.task-q-section {
+  margin-top: 14px;
+}
+
+.task-q-section:first-child {
+  margin-top: 0;
+}
+
+.task-q-heading {
+  margin: 0 0 10px 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.task-q-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-q-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+}
+
+.task-q-item:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.task-q-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  width: 100%;
+}
+
+.question-checkbox {
+  margin-top: 3px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.q-text {
+  flex: 1;
+}
+
+.task-q-label input:checked ~ .q-text {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.q-marks {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  border: 1px solid var(--border-subtle);
+}
+
+/* Plan Feasibility Warning Card */
+.plan-warning-card {
+  background-color: rgba(245, 158, 11, 0.1);
+  border: 1px solid #d97706;
+  border-left: 5px solid #f59e0b;
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  color: #fde68a;
+}
+
+.plan-warning-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #fbbf24;
+}
+
+.plan-warning-list {
+  margin: 0 0 12px 0;
+  padding-left: 20px;
+}
+
+.plan-warning-list li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.plan-warning-suggestion {
+  margin: 0;
+  font-weight: 600;
+  color: #fef3c7;
+}
+
+/* =========================================================
+   Mobile Responsiveness for Phones (<= 640px)
+   ========================================================= */
+@media (max-width: 640px) {
+  body {
+    padding: 16px 12px;
+  }
+
+  .container {
+    padding-bottom: 32px;
+  }
+
+  .app-header {
+    padding: 16px 8px 24px;
+  }
+
+  .app-title {
+    font-size: 1.75rem;
+  }
+
+  .app-tagline {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    padding: 18px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .progress-stats-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .unit-checkboxes {
+    gap: 8px;
+  }
+
+  .unit-checkbox-label {
+    flex: 1 1 calc(50% - 8px);
+    justify-content: center;
+    padding: 10px 8px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-header-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .plan-header-row .btn-success {
+    width: 100%;
+  }
+
+  .plan-date-group {
+    padding: 14px 14px;
+  }
+
+  .task-summary {
+    padding: 10px 12px;
+  }
+
+  .task-content {
+    padding: 12px 14px 14px;
+  }
+
+  .task-q-label {
+    font-size: 0.85rem;
+  }
+}

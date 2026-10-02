@@ -1,0 +1,3 @@
+# ExamPilot .gitignore
+# Exclude raw question bank source documents
+source/
