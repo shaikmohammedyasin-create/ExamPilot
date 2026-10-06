@@ -8,7 +8,7 @@
 
 - **Live Demo:** https://shaikmohammedyasin-create.github.io/ExamPilot/
 - **GitHub Repository:** https://github.com/shaikmohammedyasin-create/ExamPilot
-- **Demo Video:** Public demo video submitted through the Wispr Flow HH Goa '26 task form.
+- **Demo Video:** https://youtu.be/yO_S3IiRNTE
 
 ![Wispr Flow Usage Screenshot](whisper-flow-usage.png)
 
