@@ -4,74 +4,60 @@
 
 ---
 
-### 🔗 Links & Media
-- **Live Demo:** [https://shaikmohammedyasin-create.github.io/ExamPilot/](https://shaikmohammedyasin-create.github.io/ExamPilot/)
-- **Voice Workflow Demo:**
-  - **Short Demo Video:** [TODO](TODO)
-  - **Full Recording:** [TODO](TODO)
-  
-  ![Wispr Flow Usage Screenshot](whisper-flow-usage.png)
-  *(Wispr Flow dictation in action)*
+### 🔗 Links & Evidence
+
+- **Live Demo:** https://shaikmohammedyasin-create.github.io/ExamPilot/
+- **GitHub Repository:** https://github.com/shaikmohammedyasin-create/ExamPilot
+- **Demo Video:** Public demo video submitted through the Wispr Flow HH Goa '26 task form.
+
+![Wispr Flow Usage Screenshot](whisper-flow-usage.png)
+
+*Wispr Flow dictation evidence from the development workflow.*
 
 ---
 
 ## ⚡ One-Line Pitch
-ExamPilot is a zero-dependency, voice-built study planner that converts official university question banks into structured, daily exam preparation schedules tailored to difficulty and remaining days.
 
----
+ExamPilot is a zero-dependency, voice-built study planner that converts university question banks into structured, daily exam-preparation schedules tailored to difficulty and remaining days.
 
 ## ✨ Features
-- **Question Bank Integration:** Pre-loaded with official question banks across 4 subjects (Deep Learning, Optimization Techniques, Embedded Systems, and Human Resources & Project Management) with 5 units each, categorizing short and long questions with mark weights.
-- **Smart Planning Engine:**
-  - Automatically spreads study tasks across available days leading up to the exam.
-  - Shifts harder subjects earlier in the schedule.
-  - Enforces a strict cognitive limit of at most 4 tasks per day.
-  - Automatically reserves the final 2 days before each exam for revision.
-  - Ensures no tasks are ever scheduled past the exam date.
-- **Feasibility & Timeline Guard:** Verifies whether a plan is mathematically possible before generating, warning you with minimum required days and suggestions if an exam date is too close.
-- **Interactive Question Checklists:** Every scheduled task expands into its full question set with individual checkboxes; tasks turn green with a strikethrough once all questions are completed.
-- **Live Progress & Readiness Tracking:**
-  - Real-time overall question completion bar.
-  - Individual subject readiness percentages on every card.
-  - Dedicated "Today's Focus" dashboard showing immediately actionable tasks.
-- **Daily Streak Counter:** Automatically logs active study days and increments your streak whenever questions are ticked.
-- **Urgent Exam Highlighting:** Subject cards dynamically flag exams with fewer than 3 days remaining.
-- **Local Storage Persistence:** Keeps subjects, generated plans, completed questions, and study streaks saved locally so no progress is lost on page refresh.
-- **Modern Dark UI:** Clean dark aesthetic with an Electric Indigo accent, smooth hover lifts and glows, and responsive styling optimized for mobile phones and desktops.
-- **Zero Dependencies:** Crafted purely in vanilla HTML5, CSS3, and JavaScript with no external libraries or build setups.
 
----
+- **Question Bank Integration:** Pre-loaded with question banks across 4 subjects: Deep Learning, Optimization Techniques, Embedded Systems, and Human Resources & Project Management.
+- **Smart Planning Engine:** Spreads study tasks across available days, schedules harder subjects earlier, limits each day to 4 tasks, and reserves the final 2 days before each exam for revision.
+- **Feasibility & Timeline Guard:** Detects when a requested plan cannot fit the available study time and explains the minimum time required.
+- **Interactive Question Checklists:** Each task expands into its short and long questions with individual completion checkboxes.
+- **Live Progress & Readiness:** Tracks overall question completion, subject readiness, and today's tasks.
+- **Daily Streak Counter:** Tracks consecutive study days on which at least one question is completed.
+- **Urgent Exam Highlighting:** Flags subjects with fewer than 3 days remaining.
+- **Local Storage Persistence:** Saves subjects, plans, completed questions, and streak data locally.
+- **Responsive Dark UI:** Designed for desktop and mobile use.
+- **Zero Dependencies:** Plain HTML, CSS, and JavaScript with no external libraries or build step.
 
 ## 🚀 How to Run It
 
-ExamPilot requires no installation, compilers, or background services:
+ExamPilot requires no installation or backend.
 
-1. Clone or download this repository to your local machine:
+1. Clone or download this repository:
    ```bash
    git clone https://github.com/shaikmohammedyasin-create/ExamPilot.git
-   ```
-2. Navigate into the project folder:
-   ```bash
    cd ExamPilot
    ```
-3. Open `index.html` in any modern web browser (Google Chrome, Microsoft Edge, Firefox, or Safari):
-   - Double-click `index.html`, or
-   - Right-click and choose **Open with > Browser**, or
-   - Run a local static server if desired:
-     ```bash
-     python -m http.server 8000
-     ```
-     and visit `http://localhost:8000`.
-
----
+2. Open `index.html` in a modern browser, or run:
+   ```bash
+   python -m http.server 8000
+   ```
+3. Visit `http://localhost:8000`.
 
 ## 🎙️ Built with My Voice
 
-ExamPilot was built entirely without typing on a keyboard. Every single line of code—from the HTML structure, CSS design tokens, and JavaScript algorithms, to data extraction, bug fixes, and this documentation—was created using **Wispr Flow** voice dictation.
+ExamPilot was built using **Wispr Flow voice dictation** as the primary input method for the development workflow. The repository records the voice-driven prompts used to create and refine the application in [prompts.md](prompts.md), and includes a Wispr Flow usage screenshot as evidence.
 
-By combining voice dictation with iterative prompt-driven engineering, ExamPilot demonstrates that comprehensive web applications can be conceived, coded, and refined purely through speech.
+## 📝 Questions & Usage
 
----
+The question data included in the application was extracted from KHIT (Kallam Haranadhareddy Institute of Technology) question-bank/model-paper material supplied for this project. The application is intended for personal study, revision tracking, and academic preparation.
 
-## 📝 Note on Questions & Usage
-The question banks included in this application are extracted from KHIT (Kallam Haranadhareddy Institute of Technology) department question papers and model papers. This application is intended solely for personal study, revision tracking, and academic preparation.
+Raw source documents are excluded from version control through `.gitignore`. The extracted question data required by the application is stored in `data.js`.
+
+## 🔒 Security
+
+ExamPilot is a client-side static application and does not require API keys, backend credentials, or external service secrets.
